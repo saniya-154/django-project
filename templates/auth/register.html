@@ -1,0 +1,81 @@
+{% extends 'layouts/app.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h2 class="text-muted text-center">Register</h2>
+            <form method="POST" action="{% url 'register' %}" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="id_first_name">First Name:</label>
+                    <input type="text" class="form-control" name="first_name" id="id_first_name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="id_last_name">Last Name:</label>
+                    <input type="text" class="form-control" name="last_name" id="id_last_name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="id_profile_picture">Profile Picture:</label>
+                    <input type="file" class="form-control-file" name="profile_picture" id="id_profile_picture" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="id_username">Username:</label>
+                    <input type="text" class="form-control" name="username" id="id_username" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="id_email">Email:</label>
+                    <input type="email" class="form-control" name="email" id="id_email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="id_password1">Password:</label>
+                    <input type="password" class="form-control" name="password1" id="id_password1" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="id_password2">Confirm Password:</label>
+                    <input type="password" class="form-control" name="password2" id="id_password2" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="id_user_type">User Type:</label>
+                    <select class="form-control" name="user_type" id="id_user_type">
+                        <option value="Patient">Patient</option>
+                        <option value="Doctor">Doctor</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="id_address_line1">Address Line 1:</label>
+                    <input type="text" class="form-control" name="address_line1" id="id_address_line1" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="id_city">City:</label>
+                    <input type="text" class="form-control" name="city" id="id_city" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="id_state">State:</label>
+                    <input type="text" class="form-control" name="state" id="id_state" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="id_pincode">Pincode:</label>
+                    <input type="text" class="form-control" name="pincode" id="id_pincode" required>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-dark">Signup</button>
+                <a href='{% url 'login' %}' class = 'btn btn-default'>Already have an account?</a>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
